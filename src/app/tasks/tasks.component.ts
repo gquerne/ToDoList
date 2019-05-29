@@ -13,7 +13,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[];
 
   task: Task = {
-    Title: '',
+    title: '',
     description: '',
     id: 0,
     isSelected: false,

@@ -10,6 +10,7 @@ import { Task } from './task';
 export class TaskService {
 
   private tasksUrl = 'http://strapi.bech.fr/tasks';
+  // private tasksUrl = 'http://localhost:8080/tasks';
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.tasksUrl);

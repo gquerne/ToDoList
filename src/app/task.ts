@@ -1,5 +1,5 @@
 export class Task {
-  Title: string;
+  title: string;
   description: string;
   id: number;
   isSelected: boolean;
