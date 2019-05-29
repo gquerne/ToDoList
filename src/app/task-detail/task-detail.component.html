@@ -1,0 +1,13 @@
+<div *ngIf="task">
+  <h2>{{task.Title}} Details</h2>
+  <div><span>Title: </span>{{task.Title}}</div>
+  <div>
+    <label>New Title:
+      <input [(ngModel)]="task.Title" placeholder="title"/>
+    </label>
+  </div>
+  <div><span>description: </span>{{task.description}}</div>
+  <div><span>id: </span>{{task.id}}</div>
+  <div><span>isSelected: </span>{{task.isSelected}}</div>
+  <div><span>isHidden: </span>{{task.isHidden}}</div>
+</div>
