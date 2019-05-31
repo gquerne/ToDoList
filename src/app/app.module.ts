@@ -5,13 +5,15 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TasksComponent } from './tasks/tasks.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskViewComponent } from './task-view/task-view.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
+    TaskListComponent,
+    TaskViewComponent,
     TaskDetailComponent
   ],
   imports: [

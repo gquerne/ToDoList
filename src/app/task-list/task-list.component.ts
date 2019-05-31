@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import { Task } from '../task';
 import { TaskService} from '../task.service';
 
 @Component({
-  selector: 'app-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.css']
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.css']
 })
-
-export class TasksComponent implements OnInit {
-
+export class TaskListComponent implements OnInit {
   tasks: Task[];
 
   task: Task = {
@@ -20,19 +18,12 @@ export class TasksComponent implements OnInit {
     isHidden: false
   };
 
-  selectedTask: Task;
+  selected: Task;
 
-  onSelect(task: Task): void {
-    console.log(task);
+  onSelectList(task: Task): Task {
     task.isSelected = true;
-    this.selectedTask = task;
-  }
-
-  hide(task: Task): void {
-    console.log(task);
-    task.isSelected = false;
-    this.selectedTask = null;
-    task.isHidden = true;
+    this.selected = task;
+    return this.selected;
   }
 
   getTasks(): void {
@@ -44,5 +35,4 @@ export class TasksComponent implements OnInit {
   ngOnInit() {
     this.getTasks();
   }
-
 }

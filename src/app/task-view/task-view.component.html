@@ -1,0 +1,8 @@
+<li>
+  <span class="badge" (click)="onSelectView(task)">{{task.id}}</span>
+  <h3> Title: {{task.title}} </h3>
+  <p> Desc: {{task.description}} </p>
+  <input id="toggle" type="checkbox" (click)="hide(task)">
+  <label for="toggle">task down</label>
+</li>
+

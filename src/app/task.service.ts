@@ -13,6 +13,7 @@ export class TaskService {
   // private tasksUrl = 'http://localhost:8080/tasks';
 
   getTasks(): Observable<Task[]> {
+    console.log(this.http.get<Task[]>(this.tasksUrl));
     return this.http.get<Task[]>(this.tasksUrl);
   }
 
