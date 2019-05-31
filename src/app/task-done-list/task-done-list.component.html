@@ -1,0 +1,9 @@
+<h2>Done Tasks</h2>
+
+<ul class="tasks">
+  <app-task-view *ngFor="let t of tasks" [task]="t"></app-task-view>
+<!--  (selected)="onSelectList($event)" (done)="doneList($event)"-->
+</ul>
+<!--TODO details-->
+<!--<app-task-detail [task]="selected" ></app-task-detail>-->
+

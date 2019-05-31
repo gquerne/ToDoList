@@ -11,16 +11,17 @@ export class TaskViewComponent implements OnInit {
 
   @Input() task: Task;
   @Output() selected = new EventEmitter<Task>();
+  @Output() done = new EventEmitter<Task>();
 
   onSelectView(task: Task): void {
     task.isSelected = true;
     this.selected.emit(task);
   }
 
-  hide(task: Task): void {
+  doneView(task: Task): void {
     task.isSelected = false;
-    this.selected.emit(task);
-    task.isHidden = true;
+    task.is_done = true;
+    this.done.emit(task);
   }
 
   constructor() { }

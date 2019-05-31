@@ -15,15 +15,22 @@ export class TaskListComponent implements OnInit {
     description: '',
     id: 0,
     isSelected: false,
-    isHidden: false
+    is_done: false
   };
 
   selected: Task;
+  hidden: Task;
 
   onSelectList(task: Task): Task {
     task.isSelected = true;
     this.selected = task;
     return this.selected;
+  }
+
+  doneList(task: Task): void {
+    task.isSelected = false;
+    task.is_done = true;
+    this.hidden = task;
   }
 
   getTasks(): void {

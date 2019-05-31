@@ -3,5 +3,6 @@ export class Task {
   description: string;
   id: number;
   isSelected: boolean;
-  isHidden: boolean;
+  // tslint:disable-next-line:variable-name
+  is_done: boolean;
 }

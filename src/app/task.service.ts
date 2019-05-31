@@ -9,12 +9,16 @@ import { Task } from './task';
 })
 export class TaskService {
 
-  private tasksUrl = 'http://strapi.bech.fr/tasks';
-  // private tasksUrl = 'http://localhost:8080/tasks';
+  // private tasksUrl = 'http://strapi.bech.fr/tasks';
+  private allTasksUrl = 'http://localhost:8080/tasks';
+  private doneTaskUrl = 'http://localhost:8080/done';
 
   getTasks(): Observable<Task[]> {
-    console.log(this.http.get<Task[]>(this.tasksUrl));
-    return this.http.get<Task[]>(this.tasksUrl);
+    return this.http.get<Task[]>(this.allTasksUrl);
+  }
+
+  getDoneTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(this.doneTaskUrl);
   }
 
   constructor(private http: HttpClient) { }
