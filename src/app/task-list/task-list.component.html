@@ -4,5 +4,4 @@
   <app-task-view *ngFor="let t of tasks" [task]="t" (selected)="onSelectList($event)" (done)="doneList($event)" ></app-task-view>
 </ul>
 <!--TODO details routing-->
-<app-task-detail [task]="selected" ></app-task-detail>
-
+<app-task-detail [task]="selected" (deleted)="getTasks()"></app-task-detail>
