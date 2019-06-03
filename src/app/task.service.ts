@@ -14,7 +14,7 @@ export class TaskService {
   private allTasksUrl = 'http://localhost:8080/tasks';
   private doneTasksUrl = 'http://localhost:8080/done';
   private addTaskUrl = 'http://localhost:8080/add';
-  // private updateTaskUrl = 'http://localhost:8080/update';
+  private updateTaskUrl = 'http://localhost:8080/update';
   private deleteTaskUrl = 'http://localhost:8080/delete';
 
   getTasks(): Observable<Task[]> {
@@ -30,9 +30,10 @@ export class TaskService {
     return this.http.post<Task>(this.addTaskUrl, task);
   }
 
-  // updateTask(task: Task): void {
-  //   this.http.post<Task>(this.updateTaskUrl, task);
-  // }
+  updateTask(task: Task): Observable<Task> {
+    console.log('updateTask taskID : ' + task.id + ', taskTitle : ' + task.title);
+    return this.http.post<Task>(this.updateTaskUrl, task);
+  }
 
   deleteTask(id: number): Observable<{}> {
     const url = this.deleteTaskUrl + '/' + id;

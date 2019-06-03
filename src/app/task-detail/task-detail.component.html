@@ -7,8 +7,11 @@
     </label>
   </div>
   <div><span>description: </span>{{task.description}}</div>
-  <div><span>id: </span>{{task.id}}</div>
-  <div><span>isSelected: </span>{{task.isSelected}}</div>
-  <div><span>isDone: </span>{{task.is_done}}</div>
-  <button (click)="delete(task.id);">Del</button>
+  <div>
+    <label>New description:
+      <input [(ngModel)]="task.description" placeholder="description"/>
+    </label>
+  </div>
+  <button (click)="delete(task.id);">Delete</button>
+  <button (click)="update(task);">Edit</button>
 </div>
