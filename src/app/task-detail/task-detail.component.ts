@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 
 import {Task} from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task-detail',
@@ -11,7 +12,11 @@ export class TaskDetailComponent implements OnInit {
 
   @Input() task: Task;
 
-  constructor() { }
+  delete(id: number): void {
+    this.taskService.deleteTask(id).subscribe();
+  }
+
+  constructor(private  taskService: TaskService) { }
 
   ngOnInit(): void { }
 

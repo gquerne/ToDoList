@@ -15,7 +15,7 @@ export class TaskService {
   private doneTasksUrl = 'http://localhost:8080/done';
   private addTaskUrl = 'http://localhost:8080/add';
   // private updateTaskUrl = 'http://localhost:8080/update';
-  // private deleteTaskUrl = 'http://localhost:8080/delete';
+  private deleteTaskUrl = 'http://localhost:8080/delete';
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.allTasksUrl);
@@ -34,9 +34,10 @@ export class TaskService {
   //   this.http.post<Task>(this.updateTaskUrl, task);
   // }
 
-  // deleteTask(task: Task): void {
-  //   this.http.delete<Task>(this.deleteTaskUrl, task);
-  // }
+  deleteTask(id: number): Observable<{}> {
+    const url = this.deleteTaskUrl + '/' + id;
+    return this.http.delete(url);
+  }
 
   constructor(private http: HttpClient) { }
 }
