@@ -3,6 +3,6 @@
 <ul class="tasks">
   <app-task-view *ngFor="let t of tasks" [task]="t" (selected)="onSelectList($event)" (done)="doneList($event)" ></app-task-view>
 </ul>
-<!--TODO details-->
+<!--TODO details routing-->
 <app-task-detail [task]="selected" ></app-task-detail>
 
