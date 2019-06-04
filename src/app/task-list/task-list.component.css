@@ -4,6 +4,7 @@
   color: white;
 }
 .tasks {
+  float: left;
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
@@ -52,4 +53,9 @@ input + label{
 
 .hide {
   display: none;
+}
+
+app-task-detail {
+  position: fixed;
+  right: 0;
 }

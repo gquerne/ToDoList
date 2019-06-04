@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Task } from '../task';
 import { TaskService} from '../task.service';
 
@@ -15,22 +15,14 @@ export class TaskListComponent implements OnInit {
     description: '',
     id: 0,
     isSelected: false,
-    is_done: false
+    done: false
   };
 
   selected: Task;
-  hidden: Task;
 
   onSelectList(task: Task): Task {
-    task.isSelected = true;
     this.selected = task;
     return this.selected;
-  }
-
-  doneList(task: Task): void {
-    task.isSelected = false;
-    task.is_done = true;
-    this.hidden = task;
   }
 
   getTasks(): void {

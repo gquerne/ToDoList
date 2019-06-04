@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
 import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 
 @Component({
@@ -19,12 +21,12 @@ export class TaskViewComponent implements OnInit {
   }
 
   doneView(task: Task): void {
-    task.isSelected = false;
-    task.is_done = true;
-    this.done.emit(task);
+    // task.done = true;
+    console.log('DoneView.title : ' + task.title + ', DoneView.isDone : ' + task.done);
+    this.taskService.updateTask(task).subscribe(() => this.done.emit(task));
   }
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }

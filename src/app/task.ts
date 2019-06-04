@@ -4,5 +4,5 @@ export class Task {
   id: number;
   isSelected: boolean;
   // tslint:disable-next-line:variable-name
-  is_done: boolean;
+  done: boolean;
 }

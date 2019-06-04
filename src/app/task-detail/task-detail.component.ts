@@ -14,17 +14,22 @@ export class TaskDetailComponent implements OnInit {
   @Input() tasks: Task[];
   @Output() deleted = new EventEmitter<Task[]>();
   @Output() updated = new EventEmitter<Task[]>();
+  doYouWantToEdit = false;
 
-  update(task: Task): void {
-    this.taskService.updateTask(task).subscribe();
+  edit(): boolean {
+    this.doYouWantToEdit = true;
+    return this.doYouWantToEdit;
+  }
+
+  update(newTask: Task): void {
+    this.doYouWantToEdit = false;
+    this.taskService.updateTask(newTask).subscribe(() => this.updated.emit(this.tasks));
     this.taskService.getTasks().subscribe(tasks => this.tasks =  tasks);
-    this.updated.emit(this.tasks);
   }
 
   delete(id: number): void {
-    this.taskService.deleteTask(id).subscribe();
+    this.taskService.deleteTask(id).subscribe(() => this.deleted.emit(this.tasks));
     this.taskService.getTasks().subscribe(tasks => this.tasks =  tasks);
-    this.deleted.emit(this.tasks);
   }
 
   constructor(private  taskService: TaskService) { }

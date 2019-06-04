@@ -2,8 +2,8 @@
   <span class="badge" (click)="onSelectView(task)">{{task.id}}</span>
   <h3> Title: {{task.title}} </h3>
   <p> Desc: {{task.description}} </p>
-  <p> Done: {{task.is_done}}</p>
-  <input id="toggle" type="checkbox" (click)="doneView(task)">
+  <p> Done: {{task.done}}</p>
+  <input id="toggle" type="checkbox" [checked]="task.done" (click)="doneView(task)">
   <label for="toggle">task down</label>
 </li>
 

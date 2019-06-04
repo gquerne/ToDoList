@@ -31,7 +31,7 @@ export class TaskService {
   }
 
   updateTask(task: Task): Observable<Task> {
-    console.log('updateTask taskID : ' + task.id + ', taskTitle : ' + task.title);
+    console.log('updateService taskID : ' + task.id + ', taskTitle : ' + task.title + ', taskDone: ' + task.done);
     return this.http.post<Task>(this.updateTaskUrl, task);
   }
 

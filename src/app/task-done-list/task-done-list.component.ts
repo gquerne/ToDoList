@@ -15,7 +15,7 @@ export class TaskDoneListComponent implements OnInit {
     description: '',
     id: 0,
     isSelected: false,
-    is_done: true
+    done: true
   };
 
   getDoneTasks(): void {
