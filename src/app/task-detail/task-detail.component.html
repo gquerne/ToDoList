@@ -1,18 +1,22 @@
 <div *ngIf="task">
-  <h2>{{task.title}} Details</h2>
-  <div><span>Title: </span>{{task.title}}</div>
-  <div *ngIf="doYouWantToEdit">
-    <label>New Title:
-      <input [(ngModel)]="task.title"/>
-    </label>
+  <h2>Details</h2>
+  <div class="task">
+    <span class="badge">{{task.id}}</span>
+    <h2>{{task.title}} Details</h2>
+    <div><span>Title: </span>{{task.title}}</div>
+    <div *ngIf="doYouWantToEdit">
+      <label>New Title:
+        <input [(ngModel)]="task.title"/>
+      </label>
+    </div>
+    <div><span>description: </span>{{task.description}}</div>
+    <div *ngIf="doYouWantToEdit">
+      <label>New description:
+        <input [(ngModel)]="task.description" />
+      </label>
+    </div>
+    <button (click)="delete(task.id);">Delete</button>
+    <button *ngIf="doYouWantToEdit" (click)="update(task);">Send</button>
+    <button *ngIf="doYouWantToEdit == false" (click)="edit()">Edit</button>
   </div>
-  <div><span>description: </span>{{task.description}}</div>
-  <div *ngIf="doYouWantToEdit">
-    <label>New description:
-      <input [(ngModel)]="task.description" />
-    </label>
-  </div>
-  <button (click)="delete(task.id);">Delete</button>
-  <button *ngIf="doYouWantToEdit" (click)="update(task);">Send</button>
-  <button *ngIf="doYouWantToEdit == false" (click)="edit()">Edit</button>
 </div>

@@ -1,14 +1,21 @@
 /* TasksComponent's private CSS styles */
+* {
+  box-sizing: border-box;
+}
+
+.inlineblock {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
 .selected {
   background-color: #CFD8DC !important;
   color: white;
 }
 .tasks {
-  float: left;
-  margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 30em;
 }
 .tasks li {
   position: relative;
@@ -49,13 +56,4 @@
 
 input + label{
   cursor: pointer;
-}
-
-.hide {
-  display: none;
-}
-
-app-task-detail {
-  position: fixed;
-  right: 0;
 }
