@@ -21,7 +21,7 @@ export class TaskViewComponent implements OnInit {
   }
 
   doneView(task: Task): void {
-    // task.done = true;
+    task.done = !task.done;
     console.log('DoneView.title : ' + task.title + ', DoneView.isDone : ' + task.done);
     this.taskService.updateTask(task).subscribe(() => this.done.emit(task));
   }

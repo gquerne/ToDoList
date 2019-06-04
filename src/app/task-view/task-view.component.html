@@ -3,7 +3,8 @@
   <h3> Title: {{task.title}} </h3>
   <p> Desc: {{task.description}} </p>
   <p> Done: {{task.done}}</p>
-  <input id="toggle" type="checkbox" [checked]="task.done" (click)="doneView(task)">
+  <input id="toggle" type="checkbox" [(ngModel)]="task.done" (click)="doneView(task)">
+<!--  [checked]="task.done" -->
   <label for="toggle">task down</label>
 </li>
 
