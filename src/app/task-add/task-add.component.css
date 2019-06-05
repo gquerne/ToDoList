@@ -1,0 +1,7 @@
+#addform label input{
+  display: block;
+}
+
+input {
+  margin-bottom: 3px;
+}

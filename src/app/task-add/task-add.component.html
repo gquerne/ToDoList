@@ -1,0 +1,15 @@
+<div>
+  <form id="addform">
+    <label>Task title:
+      <input #taskTitle />
+    </label>
+    <label>Task description:<br>
+<!--      <input #taskDesc/>-->
+      <textarea rows = "5" cols = "50" #taskDesc></textarea>
+    </label>
+  </form>
+
+  <button (click)="add(taskTitle.value, taskDesc.value);" routerLink="/tasks">
+    Add
+  </button>
+</div>
