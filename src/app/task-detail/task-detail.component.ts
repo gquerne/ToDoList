@@ -29,7 +29,7 @@ export class TaskDetailComponent implements OnInit {
 
   delete(id: number): void {
     this.taskService.deleteTask(id).subscribe(() => this.deleted.emit(this.tasks));
-    this.taskService.getTasks().subscribe(tasks => this.tasks =  tasks);
+    // this.taskService.getTasks().subscribe(tasks => this.tasks =  tasks);
   }
 
   constructor(private  taskService: TaskService) { }

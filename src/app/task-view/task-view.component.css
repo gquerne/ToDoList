@@ -44,7 +44,3 @@ li:hover {
 input + label{
   cursor: pointer;
 }
-
-.hide {
-  display: none;
-}
